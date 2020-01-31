@@ -1,6 +1,7 @@
 {- ##################################
  Sarah Fondots
  Homework 1.
+ 1/31/2020
  ################################## -}
 
 module Prog1 where
@@ -16,10 +17,16 @@ dividesEvenlyByFive n
   | otherwise = false
 
 middle :: Integer -> Integer -> Integer -> Integer
-middle _ = error "undefined"
+middle x y z
+ | x > y && x < z ||  x<y && x>z  = x
+ | y > x && y < z ||  y<x && y>z  = y
+ | z > x && z < y ||  z<x && z>y  = z
+ | x == y && y==z  = z
 
 nor :: Bool -> Bool -> Bool
-nor _ = error "undefined"
+nor x y
+  | x == False && y == False = True
+  | otherwise                            = False
 
 triangleArea :: Integer -> Integer -> Float
 triangleArea _ = error "undefined"
