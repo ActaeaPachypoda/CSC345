@@ -34,8 +34,7 @@ nor x y
 
 --Write a function triangleArea that computers the area of a triangle given its base and height.
 triangleArea :: Integer -> Integer -> Float
-triangleArea x y
-  | (x*y)/2
+triangleArea x y = fromInteger (x*y) /2
 
 --Write a function ceilingDecimal that calculates the ceiling of a float, but returns it as a float rather than an integer.
 ceilingDecimal :: Float -> Float
@@ -55,11 +54,11 @@ letterGrade x
   | x >= 67 && x < 70 = "D+"
   | x >= 63 && x < 67 = "D"
   | x >= 60 && x < 63 = "D-"
-  | x < 60 = "F"
+  | x < 60                     = "F"
 
 --Write a function averageThree to return the average of three integers
 averageThree :: Integer -> Integer -> Integer -> Float
-averageThree _ = error "undefined"
+averageThree x y z =  fromInteger(x*y*z) /3
 
 --Write a function howManyAboveAverage that returns how many of three integer inputs are above its average value
 howManyAboveAverage :: Integer -> Integer -> Integer -> Integer
