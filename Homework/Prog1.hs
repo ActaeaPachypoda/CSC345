@@ -11,7 +11,9 @@ module Prog1 where
     | otherwise = False
 
 dividesEvenlyByFive :: Integer -> Bool
-dividesEvenlyByFive _ = error "undefined"
+dividesEvenlyByFive n
+  | n `mod` 5 == 0  = True
+  | otherwise = false
 
 middle :: Integer -> Integer -> Integer -> Integer
 middle _ = error "undefined"
