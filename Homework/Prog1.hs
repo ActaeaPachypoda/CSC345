@@ -38,7 +38,7 @@ triangleArea x y = fromInteger (x*y) /2
 
 --Write a function ceilingDecimal that calculates the ceiling of a float, but returns it as a float rather than an integer.
 ceilingDecimal :: Float -> Float
-ceilingDecimal _ = error "undefined"
+ceilingDecimal n = fromInteger(ceiling n)
 
 --Write a function letterGrade that returns the equivalent letter grade for a given numerical integer grade, per the syllabus for this course.
 letterGrade :: Integer -> String
@@ -62,7 +62,12 @@ averageThree x y z =  fromInteger(x*y*z) /3
 
 --Write a function howManyAboveAverage that returns how many of three integer inputs are above its average value
 howManyAboveAverage :: Integer -> Integer -> Integer -> Integer
-howManyAboveAverage _ = error "undefined"
+howManyAboveAverage x y z
+  | x > averageThree(x y z) && y > averageThree(x y z) = 2
+  | y > averageThree(x y z) && z > averageThree(x y z) = 2
+  | x > averageThree(x y z) && z > averageThree(x y z) = 2
+  | x==y&& y==z                                                              = 0
+  | otherwise                                                                      = 1
 
 --Write a function howManyWithinThreshold that returns how many of the first three arguments are within the threshold (the fourth argument) of the average of the first three arguments.
 howManyWithinThreshold :: Integer -> Integer -> Integer -> Float -> Integer
